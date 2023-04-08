@@ -1,0 +1,637 @@
+{
+
+	// "easycom": {
+	// 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	// 	},
+	"pages": [
+		// pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabBar/component/component",
+			"style": {
+				"navigationBarTitleText": "分类搜索",
+				"app-plus": {
+					"titleNView": false,
+					// 将回弹属性关掉
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/API/API",
+			"style": {
+				"navigationBarTitleText": "接口",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/template/template",
+			"style": {
+				"navigationBarTitleText": "模版",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/extUI/extUI",
+			"style": {
+				"disableScroll": true,
+				"navigationBarTitleText": "扩展组件",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/sign/signs",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					"titleNView": {}
+				}
+			}
+		},
+		{
+			"path": "pages/sign/usename",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					"titleNView": {}
+				}
+			}
+		},
+
+		//注册
+		{
+			"path": "pages/sign/log",
+			"style": {
+				"navigationBarTitleText": "上城户型库",
+				// "navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+					// 将回弹属性关掉
+					"bounce": "none"
+				}
+			}
+		},
+		//登录
+		{
+			"path": "pages/Signin/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					"titleNView": {}
+				}
+			}
+		},
+		//忘记
+		{
+			"path": "pages/Signin/forget",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					"titleNView": {}
+				}
+			}
+		},
+		//验证码登录
+		{
+			"path": "pages/Signin/Verification",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					"titleNView": {}
+				}
+			}
+		},
+		//标准户型查询
+		{
+			"path": "pages/standard/index",
+			"style": {
+				"navigationBarTitleText": "标准户型查询",
+				"navigationBarBackgroundColor": "#FFF",
+				"enablePullDownRefresh":true,
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		//标准户型审核
+		{
+			"path": "pages/standardExamine/index",
+			"style": {
+				"navigationBarTitleText": "标准户型审核",
+				"navigationBarBackgroundColor": "#FFF",
+				"enablePullDownRefresh":true,
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		//标准户型审核
+		{
+			"path": "pages/appreciateExamine/index",
+			"style": {
+				"navigationBarTitleText": "竞品户型审核",
+				"navigationBarBackgroundColor": "#FFF",
+				"enablePullDownRefresh":true,
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		//标准户型查询详情
+		{
+			"path": "pages/standard/details",
+			"style": {
+				"navigationBarTitleText": "标准户型产品",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		//标准户型下载
+		{
+			"path": "pages/standard/download",
+			"style": {
+				"navigationBarTitleText": "标准户型产品",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		//竞品户型查询
+		{
+			"path": "pages/compete/index",
+			"style": {
+				"navigationBarTitleText": "竞品户型查询",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		//竞品户型查询
+		{
+			"path": "pages/appreciate/index",
+			"style": {
+				"enablePullDownRefresh":true,
+				"navigationBarTitleText": "竞品户型查询",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+
+		{
+			"path": "pages/sign/register",
+			"style": {
+				// "navigationStyle": "custom",
+				"app-plus": {
+					// "titleNView": false,
+					// 将回弹属性关掉
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/hoseType/entrance",
+			"style": {
+				"navigationBarTitleText": "户型推荐",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/hoseType/standardSuggest",
+			"style": {
+				"navigationBarTitleText": "标准户型推荐",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/hoseTypeExamine/standardSuggest",
+			"style": {
+				"navigationBarTitleText": "标准户型审核",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/Competitors/index",
+			"style": {
+				"navigationBarTitleText": "竞品户型审核",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/Competitors/indexWc",
+			"style": {
+				"navigationBarTitleText": "竞品户型编辑页",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/hoseType/standardSuggestuse",
+			"style": {
+				"navigationBarTitleText": "标准户型推荐",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/hoseTypeExamine/standardSuggest",
+			"style": {
+				"navigationBarTitleText": "标准户型审核",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/hoseTypeExamine/standardSuggestWc",
+			"style": {
+				"navigationBarTitleText": "标准户型编辑页",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/hoseType/competitivehouseBJ",
+			"style": {
+				"navigationBarTitleText": "竞品户型编辑页",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/standardExamine/indexWc",
+			"style": {
+				"navigationBarTitleText": "已推荐标准户型",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/hoseTypeExamine/competitivehousetype",
+			"style": {
+				"navigationBarTitleText": "竞品户型审核",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/appreciateExamine/indexWc",
+			"style": {
+				"navigationBarTitleText": "已推荐竞品户型",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/hoseType/competitivehousetype",
+			"style": {
+				"navigationBarTitleText": "竞品户型推荐",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+			"path": "pages/collection/index",
+			"style": {
+				"navigationBarTitleText": "已收藏户型",
+				"navigationBarBackgroundColor": "#FFF",
+				"app-plus": {
+					// "titleNView": {
+					// 	"buttons": [{
+					// 		"text": "\ue8ba",
+					// 		"fontSrc": "/static/iconfont.ttf",
+					// 		"fontSize": "22px",
+					// 		"color": "#000",
+					// 		"type": "home"
+					// 	}]
+					// 	// "titleText":"xxx"
+					// }
+				}
+			}
+		},
+		{
+            "path" : "pages/appreciate/details",
+            "style": {
+            	"navigationBarTitleText": "竞品户型产品",
+            	"navigationBarBackgroundColor": "#FFF",
+				    "app-plus": {
+				     // "titleNView": {
+				     //  "buttons": [{
+				     //   "text": "\ue8ba",
+				     //   "fontSrc": "/static/iconfont.ttf",
+				     //   "fontSize": "22px",
+				     //   "color": "#000",
+				     //   "type": "home"
+				     //  }]
+				     //  // "titleText":"xxx"
+				     // }
+				    }
+            }
+        }
+        ,{
+            "path" : "pages/JpPageDetail/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "竞品户型名称规则",
+                "enablePullDownRefresh": false
+            }
+            
+        },{
+            "path" : "pages/BzPageDetail/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "标准户型名称规则",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"subPackages": [],
+	"globalStyle": {
+		"pageOrientation": "portrait",
+		"navigationBarTitleText": "Hello uniapp",
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#F8F8F8",
+		"backgroundColorTop": "#F4F5F6",
+		"backgroundColorBottom": "#F4F5F6",
+		"mp-360": {
+			"navigationStyle": "custom"
+		},
+		"h5": {
+			"maxWidth": 1190,
+			"navigationBarTextStyle": "black",
+			"navigationBarBackgroundColor": "#F1F1F1",
+			"navigationStyle": "custom"
+		}
+
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/tabBar/component/component",
+				"iconPath": "static/tabBar/indexx.png",
+				"selectedIconPath": "static/tabBar/inder.png"
+			},
+			{
+				"pagePath": "pages/tabBar/extUI/extUI",
+				"iconPath": "static/extui.png",
+				"selectedIconPath": "static/extuiHL.png",
+				"text": "扩展组件"
+			}, {
+				"pagePath": "pages/tabBar/template/template",
+				"iconPath": "static/template.png",
+				"selectedIconPath": "static/templateHL.png",
+				"text": "模板"
+			}
+		]
+	}
+}
