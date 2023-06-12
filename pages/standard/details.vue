@@ -12,7 +12,7 @@
 				</view>
 				<view class="imager-box">
 					<u-image :showLoading="true" :src="details.cftpurl" width="100%" class='imager'
-						@click="previewShow(details.cftpurl)"></u-image>
+						@click="hxkShow(details.cftpurl)"></u-image>
 				</view>
 			</view>
 			<view class="huxytr">
@@ -99,7 +99,7 @@
 					户型相关图片
 				</view>
 				<view class="imgArry">
-					<u-image :showLoading="true" v-for="item in imgArry" :src="item" class='img'
+					<u-image :showLoading="true" v-for="item in imgArry" :src="item.src" class='img'
 						@click="previewShow(item)"></u-image>
 				</view>
 
@@ -107,7 +107,7 @@
 		</view>
 		<view class="operation">
 			
-			<view class="login" @click="saveImg(details.dwgfjdownlod)">点击下载文件</view>
+			<view class="login" @click="downloadHttps(details.fjid,details.dwgwjxz)">点击下载文件</view>
 			<!-- <view class="register">查看相似户型</view> -->
 		</view>
 
@@ -157,12 +157,22 @@
 		async created() {
 			if (sessionStorage.getItem('details')) {
 				this.details = JSON.parse(sessionStorage.getItem('details')).mainTable
-				console.log(this.details)
 				let imgArry = []
-				this.details.hxturl.split(',').forEach(item => {
-					imgArry.push(`https://oa.siud.com${item}`)
-				})
+				for(let i = 0; i<this.details.hxturl.split(",").length; i++){
+					let data ={};
+					data.src = "https://oa.siud.com"+this.details.hxturl.split(',')[i]
+					data.name = this.details.hxxgtp.split(',')[i]
+					imgArry.push(data)
+				}
 				this.imgArry = imgArry
+				// this.details.hxturl.split(',').forEach(item => {
+				// 	console.log(this.details.hxxgtp.split(',')[0])
+				// 	imgArry.push(`https://oa.siud.com${item}`)
+				// })
+				// this.details.hxxgtp.split(',').forEach(item => {
+				// 	imgArry.push(`https://oa.siud.com${item}`)
+				// })
+				// this.imgArry = imgArry
 			}
 
 
@@ -211,10 +221,36 @@
 						var oA = document.createElement("a");
 						oA.download = ''; // 设置下载的文件名，默认是'下载'
 						oA.href = urlSrc;
+						oA.type = 'application/octet-stream;charset=utf-8';
 						document.body.appendChild(oA);
 						oA.click();
 						oA.remove(); // 下载之后把创建的元素删除
 					},
+					downloadImg(src,name) {
+							// let url = src.split("&")[0];
+							let urlSrc = src + "&download=1&response-content-type=application/jpg&response-content-disposition=attachment%3Bfilename="+name
+							console.log(urlSrc)
+							var oA = document.createElement("a");
+							oA.download = ''; // 设置下载的文件名，默认是'下载'
+							oA.href = urlSrc;
+							oA.type = 'application/octet-stream;charset=utf-8';
+							document.body.appendChild(oA);
+							oA.click();
+							oA.remove(); // 下载之后把创建的元素删除
+						},
+					downloadHttps(id,name) {
+
+							// let url = src.split("&")[0];
+							let urlSrc = "https://oa.siud.com/weaver/weaver.file.FileDownload?fileid="+id+"&download=1&response-content-type=application/dwg&response-content-disposition=attachment%3Bfilename="+name
+							console.log(urlSrc);
+							var oA = document.createElement("a");
+							oA.download = ''; // 设置下载的文件名，默认是'下载'
+							oA.href = urlSrc;
+							oA.type = 'application/octet-stream;charset=utf-8';
+							document.body.appendChild(oA);
+							oA.click();
+							oA.remove(); // 下载之后把创建的元素删除
+						},
 					setTime() {
 						const time = new Date();
 						const Y = time.getFullYear()
@@ -303,28 +339,14 @@
 								this.detailsShow = !this.detailsShow
 							},
 							closeShow() {
-								console.log(1111)
 								this.show = false
 								this.src = ''
 							},
-							previewShow(url) {
+							previewShow(data) {
+								this.downloadImg(data.src,data.name)
+							},
+							hxkShow(url){
 								this.saveImg(url)
-								// current	String/Number	详见下方说明	详见下方说明	
-								// urls	Array<String>	是	需要预览的图片链接列表	
-								// indicator	String	否	图片指示器样式，可取值："default" - 底部圆点指示器； "number" - 顶部数字指示器； "none" - 不显示指示器。	App
-								// loop	Boolean	否	是否可循环预览，默认值为 false	App
-								// longPressActions	Object	否	长按图片显示操作菜单，如不填默认为保存相册	App 1.9.5+
-								// success	Function	否	接口调用成功的回调函数	
-								// fail	Function	否	接口调用失败的回调函数	
-								// complete	Function	否	接口调用结束的回调函数（调用成功、失败都会执行）
-								// let dat ={
-								// 	current:0,
-								// 	urls:[url]
-								// }
-								// uni.previewImage(dat)
-								// console.log(222)
-								// this.show = true
-								// this.src = url
 							},
 							toUrl(url) {
 								uni.navigateTo({

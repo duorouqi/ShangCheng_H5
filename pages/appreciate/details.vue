@@ -8,7 +8,7 @@
 			</view>
 			<view class="imager-box">
 				<u-image :showLoading="true" :src="details.cftpurl" width="100%" class='imager'
-					@click="previewShow(details.cftpurl)"></u-image>
+					@click="hxkShow(details.cftpurl)"></u-image>
 
 			</view>
 			<view class="huxytr">
@@ -97,7 +97,7 @@
 						户型相关图片
 					</view>
 					<view class="imgArry">
-						<u-image :showLoading="true" v-for="item in imgArry" :src="item" class='img'
+						<u-image :showLoading="true" v-for="item in imgArry" :src="item.src" class='img'
 							@click="previewShow(item)"></u-image>
 					</view>
 				</view>
@@ -142,11 +142,13 @@
 			if (sessionStorage.getItem('detailsjp')) {
 				this.details = JSON.parse(sessionStorage.getItem('detailsjp'))
 				let imgArry = []
-				this.details.hxturl.split(',').forEach(item => {
-					imgArry.push(`https://oa.siud.com${item}`)
-				})
+				for(let i = 0; i<this.details.hxturl.split(",").length; i++){
+					let data ={};
+					data.src = "https://oa.siud.com"+this.details.hxturl.split(',')[i]
+					data.name = this.details.hxxgtp.split(',')[i]
+					imgArry.push(data)
+				}
 				this.imgArry = imgArry
-				console.log(this.details, 999)
 			}
 			this.getCollectionListData()
 			let that = this
@@ -183,6 +185,18 @@
 				oA.click();
 				oA.remove(); 
 			},
+			downloadImg(src,name) {
+							// let url = src.split("&")[0];
+							let urlSrc = src + "&download=1&response-content-type=application/jpg&response-content-disposition=attachment%3Bfilename="+name
+							console.log(urlSrc)
+							var oA = document.createElement("a");
+							oA.download = ''; // 设置下载的文件名，默认是'下载'
+							oA.href = urlSrc;
+							oA.type = 'application/octet-stream;charset=utf-8';
+							document.body.appendChild(oA);
+							oA.click();
+							oA.remove(); // 下载之后把创建的元素删除
+						},
 			setTime() {
 				const time = new Date();
 				const Y = time.getFullYear()
@@ -272,13 +286,11 @@
 				this.show = false
 				this.src = ''
 			},
-			previewShow(url) {
-				// uni.previewImage({
-				// 	urls:[url]
-				// })
+			previewShow(data) {
+				this.downloadImg(data.src,data.name)
+			},
+			hxkShow(url) {
 				this.saveImg(url)
-				// this.show = true
-				// this.src = url
 			},
 			toUrl(url) {
 				uni.navigateTo({
